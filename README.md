@@ -4,7 +4,7 @@ Load one or more [Playwright](https://playwright.dev) trace `.zip` files and see
 were visited, in what order, and with what result** — as an interactive route map instead of
 a flat timeline.
 
-**Live app:** `https://<user>.github.io/<repo>/` <!-- replace after first deploy -->
+**Live app:** `https://jagantoe.github.io/PlaywrightSiteMapping/`
 
 > **Privacy:** traces are parsed entirely in your browser. Nothing is uploaded to any server.
 > Preferences, saved views and the screenshot collection are stored in `localStorage`.
