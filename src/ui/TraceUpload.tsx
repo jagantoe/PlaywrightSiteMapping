@@ -65,7 +65,9 @@ export default function TraceUpload({ onFiles, isLoading, error }: Props) {
                         <p className="upload-label">
                             Drop one or more Playwright trace <code>.zip</code> files here
                         </p>
-                        <p className="upload-hint">or click to browse</p>
+                        <p className="upload-hint">
+                            or click to browse — a <code>.zip</code> containing trace zips works too
+                        </p>
                     </>
                 )}
             </div>

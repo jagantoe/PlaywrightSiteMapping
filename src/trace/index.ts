@@ -14,5 +14,6 @@ export type {
 } from './contracts';
 export { buildJourney } from './journeyBuilder';
 export { parseTraceFile } from './parser';
+export { expandTraceBundles } from './bundle';
 export { buildRouteGraph } from './routeGraph';
 

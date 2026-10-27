@@ -3,6 +3,7 @@ import './App.css';
 import type { LoadedTrace } from './trace/contracts';
 import { buildJourney } from './trace/journeyBuilder';
 import { parseTraceFile } from './trace/parser';
+import { expandTraceBundles } from './trace/bundle';
 import { buildRouteGraph } from './trace/routeGraph';
 import {
     type CollectedShot,
@@ -142,6 +143,11 @@ export default function App() {
         setLoadError(null);
         const loaded: LoadedTrace[] = [];
         const errors: string[] = [];
+        try {
+            files = await expandTraceBundles(files);
+        } catch (err) {
+            errors.push(err instanceof Error ? err.message : 'Failed to read zip');
+        }
         for (const file of files) {
             const blobUrl = URL.createObjectURL(file);
             try {

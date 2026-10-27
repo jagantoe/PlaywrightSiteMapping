@@ -4,7 +4,7 @@ Load one or more [Playwright](https://playwright.dev) trace `.zip` files and see
 were visited, in what order, and with what result** — as an interactive route map instead of
 a flat timeline.
 
-**Live app:** `https://jagantoe.github.io/PlaywrightSiteMapping/`
+**Live app:** <https://jagantoe.github.io/PlaywrightSiteMapping/>
 
 > **Privacy:** traces are parsed entirely in your browser. Nothing is uploaded to any server.
 > Preferences, saved views and the screenshot collection are stored in `localStorage`.
@@ -37,6 +37,9 @@ export default defineConfig({
 
 Traces are written to `test-results/**/trace.zip`. Drop one or more of them on the app.
 Screencast frames and DOM snapshots are included by default.
+
+You can also drop a single `.zip` that contains several trace `.zip` files (e.g. a zipped
+`test-results` folder); each nested trace is loaded separately.
 
 ## Development
 

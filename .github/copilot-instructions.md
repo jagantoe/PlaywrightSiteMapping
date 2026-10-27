@@ -39,11 +39,14 @@ src/
     contracts.ts        All shared interfaces / types (no logic)
     parser.ts           Unzips .zip, parses .trace/.network JSONL → ParsedTrace
     journeyBuilder.ts   Converts ParsedTrace → TraceJourney (visits, actions, etc.)
+    bundle.ts           expandTraceBundles — a .zip with no .trace files but nested .zip files is replaced
+                        by those nested zips (File objects); name collisions keep the path (`/` → `_`).
+                        Applied in App.addFiles before parsing.
     routeGraph.ts       Merges multiple LoadedTrace journeys → RouteGraph
     index.ts            Re-exports public trace API
 
   ui/                   React components and UI helpers
-    TraceUpload.tsx     Drop-zone / file picker (accepts multiple .zip files)
+    TraceUpload.tsx     Drop-zone / file picker (accepts multiple .zip files, including a zip of trace zips)
     TraceSwitcher.tsx   Header dropdown: switch active trace, remove traces, "+ Add trace"
     RouteGraphView.tsx  React Flow canvas — draggable nodes/groups, grid snap, view toolbar, minimap
     RouteNodeCard.tsx   Custom React Flow node (RouteNodeCard) and group box (OriginGroupNode)
